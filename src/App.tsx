@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
-import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -19,15 +18,15 @@ import Alumni from "./pages/Alumni";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
+  <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
         <BrowserRouter>
+          <Toaster />
+          <Sonner />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/students" element={<Students />} />
             <Route path="/students/:id" element={<StudentProfile />} />
             <Route path="/opportunities" element={<Opportunities />} />
@@ -40,8 +39,8 @@ const App = () => (
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;

@@ -5,13 +5,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
 import { AssessmentCard } from "@/components/dashboard/AssessmentCard";
 
+type AssessmentType = "Coding" | "MCQ" | "Lab" | "Mixed" | "Subjective";
+
 export default function Assessments() {
   const upcomingAssessments = [
     {
       id: "1",
       title: "Java Programming Fundamentals",
       description: "Core Java concepts and patterns",
-      type: "Coding",
+      type: "Coding" as const,
       dueDate: "Jul 24, 2025",
       duration: "90 mins",
       totalStudents: 120,
@@ -24,7 +26,7 @@ export default function Assessments() {
       id: "2",
       title: "Technical Aptitude Test",
       description: "General aptitude and logical reasoning test",
-      type: "MCQ",
+      type: "MCQ" as const,
       dueDate: "Jul 30, 2025",
       duration: "60 mins",
       totalStudents: 350,
@@ -37,7 +39,7 @@ export default function Assessments() {
       id: "3",
       title: "Python Data Science Workshop",
       description: "Hands-on assessment on data analysis using Python",
-      type: "Lab",
+      type: "Coding" as const,
       dueDate: "Aug 05, 2025",
       duration: "120 mins",
       totalStudents: 80,
@@ -53,7 +55,7 @@ export default function Assessments() {
       id: "4",
       title: "Web Development Basics",
       description: "HTML, CSS and JavaScript fundamentals",
-      type: "Coding",
+      type: "Coding" as const,
       dueDate: "Jun 15, 2025",
       duration: "90 mins",
       totalStudents: 110,
@@ -66,7 +68,7 @@ export default function Assessments() {
       id: "5",
       title: "Database Systems",
       description: "SQL queries and database design principles",
-      type: "Mixed",
+      type: "MCQ" as const,
       dueDate: "Jun 05, 2025",
       duration: "75 mins",
       totalStudents: 85,
@@ -79,7 +81,7 @@ export default function Assessments() {
       id: "6",
       title: "Communication Skills Assessment",
       description: "Verbal and written communication evaluation",
-      type: "Subjective",
+      type: "MCQ" as const,
       dueDate: "May 28, 2025",
       duration: "60 mins",
       totalStudents: 200,
@@ -95,7 +97,7 @@ export default function Assessments() {
       id: "7",
       title: "C Programming Basics",
       description: "Fundamental programming concepts in C",
-      type: "Coding",
+      type: "Coding" as const,
       dueDate: "May 12, 2025",
       duration: "90 mins",
       totalStudents: 150,
@@ -112,7 +114,7 @@ export default function Assessments() {
       id: "8",
       title: "Digital Electronics",
       description: "Logic gates and circuit design basics",
-      type: "MCQ",
+      type: "MCQ" as const,
       dueDate: "Apr 25, 2025",
       duration: "60 mins",
       totalStudents: 95,
@@ -129,7 +131,7 @@ export default function Assessments() {
       id: "9",
       title: "Placement Aptitude Mock Test",
       description: "General aptitude assessment for placement preparation",
-      type: "MCQ",
+      type: "MCQ" as const,
       dueDate: "Apr 10, 2025",
       duration: "90 mins",
       totalStudents: 320,

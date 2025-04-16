@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,8 +13,16 @@ export default function Login() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!email || !password) {
+      toast.error("Please enter both email and password");
+      return;
+    }
+    
     // In a real app, you'd call an auth API here
-    navigate("/"); // Navigate to root which has dashboard
+    toast.success("Login successful!");
+    navigate("/"); // Navigate to dashboard
   };
 
   return (

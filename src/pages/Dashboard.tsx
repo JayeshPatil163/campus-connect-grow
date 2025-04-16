@@ -19,11 +19,6 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-import {
   LineChart as RechartsLineChart,
   Line,
   XAxis,
@@ -118,7 +113,7 @@ export default function Dashboard() {
             <CardContent className="pt-2">
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
+                  <RechartsLineChart
                     data={placementData}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                   >
@@ -136,7 +131,7 @@ export default function Dashboard() {
                       strokeWidth={2} 
                       activeDot={{ r: 8 }} 
                     />
-                  </LineChart>
+                  </RechartsLineChart>
                 </ResponsiveContainer>
               </div>
             </CardContent>
