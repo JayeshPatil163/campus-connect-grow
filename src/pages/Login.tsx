@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,16 +30,15 @@ export default function Login() {
         <div className="flex flex-1 flex-col items-center justify-center md:items-start">
           <div className="flex items-center gap-2 text-3xl font-bold font-heading text-campus-800">
             <div className="flex h-10 w-10 items-center justify-center rounded-md bg-campus-600 text-white text-lg">
-              CC
+              DP
             </div>
-            <div>Campus<span className="text-campus-600">Connect</span></div>
+            <div>DYP<span className="text-campus-600">Connect</span></div>
           </div>
           <h1 className="mt-4 max-w-lg text-center text-4xl font-bold tracking-tight md:text-left md:text-5xl">
-            Centralized College Opportunity Platform
+            DYPConnect: A Unified Growth & Placement Platform
           </h1>
           <p className="mt-4 max-w-lg text-center text-muted-foreground md:text-left">
-            Simplifying placement preparation, student assessments, club activities, 
-            and career discovery - all in one place.
+            Smart Placements. Smarter Students. From Club Events to Career Launch — Everything in One Place
           </p>
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -69,7 +67,7 @@ export default function Login() {
         <div className="w-full max-w-md">
           <div className="rounded-lg border bg-white p-8 shadow-sm">
             <div className="mb-6 flex flex-col space-y-1">
-              <h2 className="text-2xl font-bold">Sign in to admin portal</h2>
+              <h2 className="text-2xl font-bold">Sign in to DYPConnect Portal</h2>
               <p className="text-sm text-muted-foreground">
                 Enter your credentials to access the dashboard
               </p>

@@ -19,9 +19,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <div className="p-6">
           <h2 className="text-2xl font-bold font-heading text-campus-800 dark:text-campus-200 flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-campus-600 text-white text-sm">
-              CC
+              DP
             </span>
-            Campus<span className="text-campus-600">Connect</span>
+            DYP<span className="text-campus-600">Connect</span>
           </h2>
         </div>
         <div className="flex-1 px-3 py-2">
