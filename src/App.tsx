@@ -10,6 +10,11 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import StudentProfile from "./pages/StudentProfile";
+import Students from "./pages/Students";
+import Opportunities from "./pages/Opportunities";
+import Assessments from "./pages/Assessments";
+import Events from "./pages/Events";
+import Alumni from "./pages/Alumni";
 
 const queryClient = new QueryClient();
 
@@ -21,19 +26,16 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/students" element={<Dashboard />} />
+            <Route path="/students" element={<Students />} />
             <Route path="/students/:id" element={<StudentProfile />} />
-            <Route path="/opportunities" element={<Dashboard />} />
-            <Route path="/assessments" element={<Dashboard />} />
-            <Route path="/events" element={<Dashboard />} />
-            <Route path="/achievements" element={<Dashboard />} />
-            <Route path="/alumni" element={<Dashboard />} />
+            <Route path="/opportunities" element={<Opportunities />} />
+            <Route path="/assessments" element={<Assessments />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/alumni" element={<Alumni />} />
             <Route path="/settings" element={<Dashboard />} />
             <Route path="/logout" element={<Navigate to="/login" replace />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -9,20 +9,23 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const getSystemTheme = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Check if user has previously selected a theme
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    if (savedTheme) return savedTheme;
-    
-    // Otherwise use system preference
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    // Only access localStorage on client side
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      return savedTheme || getSystemTheme();
+    }
+    return "light"; // Default for SSR
   });
 
   useEffect(() => {
-    // Apply theme to the document
     const root = window.document.documentElement;
-    root.classList.remove("dark", "light");
+    root.classList.remove("light", "dark");
     root.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
