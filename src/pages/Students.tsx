@@ -1,4 +1,3 @@
-
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -147,7 +146,6 @@ export default function Students() {
     }
   ];
 
-  // Filter students based on selections
   const filteredStudents = students.filter(student => {
     const domainMatch = !selectedDomain || student.department.toLowerCase().includes(selectedDomain);
     const skillMatch = !selectedSkill || student.skills.some(skill => 
@@ -182,7 +180,7 @@ export default function Students() {
                 <SelectValue placeholder="Domain" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Domains</SelectItem>
+                <SelectItem value="all-domains">All Domains</SelectItem>
                 {domains.map(domain => (
                   <SelectItem key={domain.value} value={domain.value}>
                     {domain.label}
@@ -196,7 +194,7 @@ export default function Students() {
                 <SelectValue placeholder="Skills" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Skills</SelectItem>
+                <SelectItem value="all-skills">All Skills</SelectItem>
                 {skills.map(skill => (
                   <SelectItem key={skill.value} value={skill.value}>
                     {skill.label}
@@ -210,7 +208,7 @@ export default function Students() {
                 <SelectValue placeholder="Job Role" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Roles</SelectItem>
+                <SelectItem value="all-roles">All Roles</SelectItem>
                 {roles.map(role => (
                   <SelectItem key={role.value} value={role.value}>
                     {role.label}
