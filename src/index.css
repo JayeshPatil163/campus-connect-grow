@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,6 +50,17 @@
     --sidebar-border: 263 13% 91%;
 
     --sidebar-ring: 263 91.2% 59.8%;
+    
+    --campus-50: 263 70% 97%;
+    --campus-100: 263 70% 94%;
+    --campus-200: 263 70% 86%;
+    --campus-300: 263 70% 78%;
+    --campus-400: 263 70% 70%;
+    --campus-500: 263 70% 60%;
+    --campus-600: 263 70% 50%;
+    --campus-700: 263 70% 40%;
+    --campus-800: 263 70% 30%;
+    --campus-900: 263 70% 20%;
   }
 
   .dark {
@@ -61,7 +73,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 263 70% 60%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -79,14 +91,26 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 263 70% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 263 70% 60%;
+    
+    --campus-50: 263 30% 15%;
+    --campus-100: 263 30% 20%;
+    --campus-200: 263 30% 25%;
+    --campus-300: 263 30% 35%;
+    --campus-400: 263 30% 45%;
+    --campus-500: 263 70% 60%;
+    --campus-600: 263 70% 70%;
+    --campus-700: 263 70% 75%;
+    --campus-800: 263 70% 85%;
+    --campus-900: 263 70% 95%;
   }
 }
 

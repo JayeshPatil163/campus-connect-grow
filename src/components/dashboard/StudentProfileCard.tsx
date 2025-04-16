@@ -3,6 +3,7 @@ import { User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -35,7 +36,7 @@ export function StudentProfileCard({ student }: StudentProfileCardProps) {
           <div className="flex items-center space-x-4">
             <Avatar className="h-10 w-10 border">
               <AvatarImage src={student.image} alt={student.name} />
-              <AvatarFallback className="bg-campus-100 text-campus-600">
+              <AvatarFallback className="bg-campus-100 text-campus-600 dark:bg-campus-700 dark:text-campus-300">
                 {student.name
                   .split(" ")
                   .map((n) => n[0])
@@ -59,31 +60,31 @@ export function StudentProfileCard({ student }: StudentProfileCardProps) {
       </CardHeader>
       <CardContent className="pb-2">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="outline" className="bg-blue-50">CGPA {student.cgpa}</Badge>
+          <Badge variant="outline" className="bg-blue-50 dark:bg-blue-900/20">CGPA {student.cgpa}</Badge>
           {student.skills.slice(0, 3).map((skill) => (
-            <Badge key={skill} variant="outline" className="bg-gray-50">
+            <Badge key={skill} variant="outline" className="bg-gray-50 dark:bg-gray-800">
               {skill}
             </Badge>
           ))}
           {student.skills.length > 3 && (
-            <Badge variant="outline" className="bg-gray-50">
+            <Badge variant="outline" className="bg-gray-50 dark:bg-gray-800">
               +{student.skills.length - 3} more
             </Badge>
           )}
         </div>
         <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-          <div className="flex items-center gap-2 rounded-lg bg-green-50 p-2">
-            <div className="rounded-full bg-green-100 p-1">
-              <Award className="h-3 w-3 text-green-600" />
+          <div className="flex items-center gap-2 rounded-lg bg-green-50 dark:bg-green-900/20 p-2">
+            <div className="rounded-full bg-green-100 dark:bg-green-800 p-1">
+              <Award className="h-3 w-3 text-green-600 dark:text-green-400" />
             </div>
             <div>
               <div className="font-medium">{student.achievements}</div>
               <div className="text-xs text-muted-foreground">Achievements</div>
             </div>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-blue-50 p-2">
-            <div className="rounded-full bg-blue-100 p-1">
-              <FileCheck className="h-3 w-3 text-blue-600" />
+          <div className="flex items-center gap-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-2">
+            <div className="rounded-full bg-blue-100 dark:bg-blue-800 p-1">
+              <FileCheck className="h-3 w-3 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <div className="font-medium">{student.certifications}</div>
@@ -93,8 +94,10 @@ export function StudentProfileCard({ student }: StudentProfileCardProps) {
         </div>
       </CardContent>
       <CardFooter className="pt-2">
-        <Button variant="outline" size="sm" className="w-full">
-          View Profile
+        <Button variant="outline" size="sm" className="w-full" asChild>
+          <Link to={`/students/${student.id}`}>
+            View Profile
+          </Link>
         </Button>
       </CardFooter>
     </Card>

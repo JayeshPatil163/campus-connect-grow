@@ -5,6 +5,7 @@ import { UserButton } from "@/components/ui/UserButton";
 import { Bell, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -12,11 +13,11 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-white border-r shadow-sm">
+      <div className="hidden md:flex flex-col w-64 bg-card border-r shadow-sm">
         <div className="p-6">
-          <h2 className="text-2xl font-bold font-heading text-campus-800 flex items-center gap-2">
+          <h2 className="text-2xl font-bold font-heading text-campus-800 dark:text-campus-200 flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-campus-600 text-white text-sm">
               CC
             </span>
@@ -31,9 +32,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Top navigation */}
-        <header className="h-16 flex items-center justify-between px-6 border-b bg-white">
+        <header className="h-16 flex items-center justify-between px-6 border-b bg-card">
           <div className="flex items-center gap-2 w-full max-w-md">
-            <Search className="w-4 h-4 text-gray-400" />
+            <Search className="w-4 h-4 text-muted-foreground" />
             <Input 
               type="search" 
               placeholder="Search students, opportunities..." 
@@ -41,6 +42,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             />
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
               <span className="absolute top-1 right-1 h-2 w-2 bg-campus-600 rounded-full"></span>
@@ -50,7 +52,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         </header>
         
         {/* Page content */}
-        <main className="flex-1 p-6 overflow-auto">
+        <main className="flex-1 p-6 overflow-auto bg-background">
           {children}
         </main>
       </div>
