@@ -13,7 +13,7 @@ export default function Login() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, you'd call an auth API here
-    navigate("/dashboard");
+    navigate("/"); // Navigate to root which has dashboard
   };
 
   return (
